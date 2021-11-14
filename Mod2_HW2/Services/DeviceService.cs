@@ -8,6 +8,11 @@ namespace Mod2_HW2.Services
     {
         private DeviceProvider _deviceProvider;
 
+        public DeviceService()
+        {
+            _deviceProvider = new DeviceProvider();
+        }
+
         public Device[] CreateDeviceArray()
         {
             DeviceEntity[] deviceEntity = _deviceProvider.GetDeviceArray();

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Mod2_HW2.Configurations
 {
-    public class ProductConfig
+    public class BasketConfig
     {
-        public static Currency Currency => Currency.UAH;
+        public static int Capacity => 10;
     }
 }

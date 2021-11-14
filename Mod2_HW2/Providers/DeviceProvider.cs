@@ -15,7 +15,7 @@ namespace Mod2_HW2.Providers
                     ID = Guid.NewGuid(),
                     Name = $"device-{i}",
                     Model = new Random().Next().ToString(),
-                    Price = new Random().Next()
+                    Price = new Random().Next(6666)
                 };
             }
 

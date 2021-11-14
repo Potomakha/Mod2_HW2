@@ -23,7 +23,5 @@ namespace Mod2_HW2.Models
                 return Instance;
             }
         }
-
-
     }
 }

@@ -12,13 +12,18 @@ namespace Mod2_HW2
         public Starter()
         {
             _deviceService = new DeviceService();
-            _user = new User();
+            _user = new User()
+            {
+                Email = "useremail@gmail.com",
+                Name = "Ivan Ivanov",
+                PhoneNumber = 380123212321
+            };
         }
 
         public void Run()
         {
             Device[] devices = _deviceService.CreateDeviceArray();
-            int toBuyCount = new Random().Next(11);
+            int toBuyCount = new Random().Next(1, 11);
             Device[] toBuy = new Device[toBuyCount];
 
             for (int i = 0; i < toBuyCount; i++)
@@ -27,7 +32,7 @@ namespace Mod2_HW2
             }
 
             _user.AddProducts(toBuy);
-
+            _user.MakeOrder(_user);
     }
     }
 }
