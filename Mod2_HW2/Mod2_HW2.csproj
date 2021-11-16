@@ -6,7 +6,6 @@
     <CodeAnalysisRuleSet>../settings.ruleset</CodeAnalysisRuleSet>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
-    <NoWarn>SA1201</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

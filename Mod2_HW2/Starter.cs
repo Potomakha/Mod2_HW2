@@ -8,6 +8,8 @@ namespace Mod2_HW2
     {
         private readonly DeviceService _deviceService;
         private readonly User _user;
+        private readonly Basket _basket;
+        private readonly OrderService _orderService;
 
         public Starter()
         {
@@ -18,21 +20,23 @@ namespace Mod2_HW2
                 Name = "Ivan Ivanov",
                 PhoneNumber = 380123212321
             };
+            _basket = Basket.Instance;
+            _orderService = new OrderService();
         }
 
         public void Run()
         {
-            Device[] devices = _deviceService.CreateDeviceArray();
+            var devices = _deviceService.CreateDeviceArray();
             int toBuyCount = new Random().Next(1, 11);
-            Device[] toBuy = new Device[toBuyCount];
+            var toBuy = new Device[toBuyCount];
 
             for (int i = 0; i < toBuyCount; i++)
             {
                 toBuy[i] = devices[i];
             }
 
-            _user.AddProducts(toBuy);
-            _user.MakeOrder(_user);
+            _basket.AddProducts(toBuy);
+            _orderService.CreateOrder(_user);
     }
     }
 }

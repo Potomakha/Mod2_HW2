@@ -4,9 +4,8 @@ namespace Mod2_HW2.Models
 {
     public class Basket
     {
-        private static readonly Basket Instance = new Basket();
+        private static readonly Basket _instance = new Basket();
         private readonly int _capacity;
-        public Device[] Devices { get; set; }
         static Basket()
         {
         }
@@ -16,12 +15,12 @@ namespace Mod2_HW2.Models
             _capacity = ConfigurationService.GetBasketLenght();
         }
 
-        public static Basket GetInstance
+        public Device[] Devices { get; private set; }
+        public static Basket Instance => _instance;
+
+        public void AddProducts(Device[] devices)
         {
-            get
-            {
-                return Instance;
-            }
+            Devices = devices;
         }
     }
 }

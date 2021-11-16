@@ -15,13 +15,13 @@ namespace Mod2_HW2.Services
 
         public Device[] CreateDeviceArray()
         {
-            DeviceEntity[] deviceEntity = _deviceProvider.GetDeviceArray();
-            Device[] devices = new Device[deviceEntity.Length];
+            var deviceEntity = _deviceProvider.GetDeviceArray();
+            var devices = new Device[deviceEntity.Length];
             for (int i = 0; i < deviceEntity.Length; i++)
             {
                 devices[i] = new Device
                 {
-                    ID = deviceEntity[i].ID.ToString(),
+                    ID = deviceEntity[i].Id.ToString(),
                     Name = deviceEntity[i].Name,
                     Model = deviceEntity[i].Model,
                     Price = deviceEntity[i].Price

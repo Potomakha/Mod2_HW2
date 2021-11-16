@@ -9,13 +9,13 @@ namespace Mod2_HW2.Services
         private decimal _orderCost;
         public OrderService()
         {
-            _basket = Basket.GetInstance;
+            _basket = Basket.Instance;
             _orderCost = 0;
         }
 
         public void CreateOrder(User user)
         {
-            StringBuilder stringBuilder = new StringBuilder();
+            var stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"{user.Name}`s order");
             stringBuilder.AppendLine("Order items:");
             foreach (var item in _basket.Devices)
